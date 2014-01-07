@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uCommerceNiceUrls.App", "uCommerceNiceUrls\uCommerceNiceUrls.App.csproj", "{6F24BF7E-69DC-446E-89EA-1440B29FAD0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C3460907-CA52-4C46-A426-9066B52F105F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uCommerceNiceUrls.Core", "uCommerceNiceUrls.Core\uCommerceNiceUrls.Core.csproj", "{2173B336-5403-4016-B67C-A9AD055A3F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F24BF7E-69DC-446E-89EA-1440B29FAD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F24BF7E-69DC-446E-89EA-1440B29FAD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F24BF7E-69DC-446E-89EA-1440B29FAD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F24BF7E-69DC-446E-89EA-1440B29FAD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2173B336-5403-4016-B67C-A9AD055A3F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2173B336-5403-4016-B67C-A9AD055A3F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2173B336-5403-4016-B67C-A9AD055A3F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2173B336-5403-4016-B67C-A9AD055A3F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Base.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BaseStoreContainer">
+          <EntitySet Name="NiceUrl_Catalog" EntityType="Base.Store.NiceUrl_Catalog" store:Type="Tables" Schema="dbo" Table="NiceUrl.Catalog" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NiceUrl_Category" EntityType="Base.Store.NiceUrl_Category" store:Type="Tables" Schema="dbo" Table="NiceUrl.Category" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NiceUrl_LanguageName" EntityType="Base.Store.NiceUrl_LanguageName" store:Type="Tables" Schema="dbo" Table="NiceUrl.LanguageName" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NiceUrl_Product" EntityType="Base.Store.NiceUrl_Product" store:Type="Tables" Schema="dbo" Table="NiceUrl.Product" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NiceUrl_ProductCategoryRelations" EntityType="Base.Store.NiceUrl_ProductCategoryRelations" store:Type="Tables" Schema="dbo" Table="NiceUrl.ProductCategoryRelations" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="NiceUrl_Url" EntityType="Base.Store.NiceUrl_Url" store:Type="Tables" Schema="dbo" Table="NiceUrl.Url" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="uCommerce_Category" EntityType="Base.Store.uCommerce_Category" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="uCommerce_Product" EntityType="Base.Store.uCommerce_Product" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="uCommerce_ProductCatalog" EntityType="Base.Store.uCommerce_ProductCatalog" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK_NiceUrl_Catalog_NiceUrl_Url" Association="Base.Store.FK_NiceUrl_Catalog_NiceUrl_Url">
+            <End Role="NiceUrl_Url" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Catalog" EntitySet="NiceUrl_Catalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Catalog_uCommerce_ProductCatalog" Association="Base.Store.FK_NiceUrl_Catalog_uCommerce_ProductCatalog">
+            <End Role="uCommerce_ProductCatalog" EntitySet="uCommerce_ProductCatalog" />
+            <End Role="NiceUrl_Catalog" EntitySet="NiceUrl_Catalog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_NiceUrl_Catalog" Association="Base.Store.FK_NiceUrl_Category_NiceUrl_Catalog">
+            <End Role="NiceUrl_Catalog" EntitySet="NiceUrl_Catalog" />
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_NiceUrl_Category1" Association="Base.Store.FK_NiceUrl_Category_NiceUrl_Category1">
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Category" />
+            <End Role="NiceUrl_Category1" EntitySet="NiceUrl_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_NiceUrl_Url" Association="Base.Store.FK_NiceUrl_Category_NiceUrl_Url">
+            <End Role="NiceUrl_Url" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_uCommerce_Category" Association="Base.Store.FK_NiceUrl_Category_uCommerce_Category">
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_LanguageName_NiceUrl_Url" Association="Base.Store.FK_NiceUrl_LanguageName_NiceUrl_Url">
+            <End Role="NiceUrl_Url" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_LanguageName" EntitySet="NiceUrl_LanguageName" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Product_NiceUrl_Product1" Association="Base.Store.FK_NiceUrl_Product_NiceUrl_Product1">
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Product" />
+            <End Role="NiceUrl_Product1" EntitySet="NiceUrl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Product_NiceUrl_Url" Association="Base.Store.FK_NiceUrl_Product_NiceUrl_Url">
+            <End Role="NiceUrl_Url" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Product_uCommerce_Product" Association="Base.Store.FK_NiceUrl_Product_uCommerce_Product">
+            <End Role="uCommerce_Product" EntitySet="uCommerce_Product" />
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_ProductCategoryRelations_NiceUrl_Category" Association="Base.Store.FK_NiceUrl_ProductCategoryRelations_NiceUrl_Category">
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Category" />
+            <End Role="NiceUrl_ProductCategoryRelations" EntitySet="NiceUrl_ProductCategoryRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_ProductCategoryRelations_NiceUrl_Product" Association="Base.Store.FK_NiceUrl_ProductCategoryRelations_NiceUrl_Product">
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Product" />
+            <End Role="NiceUrl_ProductCategoryRelations" EntitySet="NiceUrl_ProductCategoryRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uCommerce_Category_ParentCategory" Association="Base.Store.FK_uCommerce_Category_ParentCategory">
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+            <End Role="uCommerce_Category1" EntitySet="uCommerce_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uCommerce_Product_ParentProduct" Association="Base.Store.FK_uCommerce_Product_ParentProduct">
+            <End Role="uCommerce_Product" EntitySet="uCommerce_Product" />
+            <End Role="uCommerce_Product1" EntitySet="uCommerce_Product" />
+          </AssociationSet>
+          <AssociationSet Name="uCommerce_FK_Category_ProductCatalog" Association="Base.Store.uCommerce_FK_Category_ProductCatalog">
+            <End Role="uCommerce_ProductCatalog" EntitySet="uCommerce_ProductCatalog" />
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="NiceUrl_Catalog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CatalogID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="ParentCategoryID" Type="int" />
+          <Property Name="CatalogID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceUrl_LanguageName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CultureCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NiceUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UrlID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="ProductFamilyID" Type="int" />
+        </EntityType>
+        <EntityType Name="NiceUrl_ProductCategoryRelations">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Url">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="uCommerce_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="ImageMediaId" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisplayOnSite" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ParentCategoryId" Type="int" />
+          <Property Name="ProductCatalogId" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="DefinitionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uCommerce_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentProductId" Type="int" />
+          <Property Name="Sku" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="VariantSku" Type="nvarchar" MaxLength="30" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="DisplayOnSite" Type="bit" Nullable="false" />
+          <Property Name="ThumbnailImageMediaId" Type="nvarchar" MaxLength="100" />
+          <Property Name="PrimaryImageMediaId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Weight" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="ProductDefinitionId" Type="int" Nullable="false" />
+          <Property Name="AllowOrdering" Type="bit" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rating" Type="float" />
+        </EntityType>
+        <EntityType Name="uCommerce_ProductCatalog">
+          <Key>
+            <PropertyRef Name="ProductCatalogId" />
+          </Key>
+          <Property Name="ProductCatalogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCatalogGroupId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="PriceGroupId" Type="int" Nullable="false" />
+          <Property Name="ShowPricesIncludingVAT" Type="bit" Nullable="false" />
+          <Property Name="IsVirtual" Type="bit" Nullable="false" />
+          <Property Name="DisplayOnWebSite" Type="bit" Nullable="false" />
+          <Property Name="LimitedAccess" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="512" />
+        </EntityType>
+        <Association Name="FK_NiceUrl_Catalog_NiceUrl_Url">
+          <End Role="NiceUrl_Url" Type="Base.Store.NiceUrl_Url" Multiplicity="1" />
+          <End Role="NiceUrl_Catalog" Type="Base.Store.NiceUrl_Catalog" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Url">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Catalog">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Catalog_uCommerce_ProductCatalog">
+          <End Role="uCommerce_ProductCatalog" Type="Base.Store.uCommerce_ProductCatalog" Multiplicity="1" />
+          <End Role="NiceUrl_Catalog" Type="Base.Store.NiceUrl_Catalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_ProductCatalog">
+              <PropertyRef Name="ProductCatalogId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Catalog">
+              <PropertyRef Name="CatalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_NiceUrl_Catalog">
+          <End Role="NiceUrl_Catalog" Type="Base.Store.NiceUrl_Catalog" Multiplicity="1" />
+          <End Role="NiceUrl_Category" Type="Base.Store.NiceUrl_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Catalog">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category">
+              <PropertyRef Name="CatalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_NiceUrl_Category1">
+          <End Role="NiceUrl_Category" Type="Base.Store.NiceUrl_Category" Multiplicity="0..1" />
+          <End Role="NiceUrl_Category1" Type="Base.Store.NiceUrl_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category1">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_NiceUrl_Url">
+          <End Role="NiceUrl_Url" Type="Base.Store.NiceUrl_Url" Multiplicity="1" />
+          <End Role="NiceUrl_Category" Type="Base.Store.NiceUrl_Category" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Url">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_uCommerce_Category">
+          <End Role="uCommerce_Category" Type="Base.Store.uCommerce_Category" Multiplicity="1" />
+          <End Role="NiceUrl_Category" Type="Base.Store.NiceUrl_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_LanguageName_NiceUrl_Url">
+          <End Role="NiceUrl_Url" Type="Base.Store.NiceUrl_Url" Multiplicity="1" />
+          <End Role="NiceUrl_LanguageName" Type="Base.Store.NiceUrl_LanguageName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Url">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_LanguageName">
+              <PropertyRef Name="UrlID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Product_NiceUrl_Product1">
+          <End Role="NiceUrl_Product" Type="Base.Store.NiceUrl_Product" Multiplicity="0..1" />
+          <End Role="NiceUrl_Product1" Type="Base.Store.NiceUrl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Product1">
+              <PropertyRef Name="ProductFamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Product_NiceUrl_Url">
+          <End Role="NiceUrl_Url" Type="Base.Store.NiceUrl_Url" Multiplicity="1" />
+          <End Role="NiceUrl_Product" Type="Base.Store.NiceUrl_Product" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Url">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Product">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Product_uCommerce_Product">
+          <End Role="uCommerce_Product" Type="Base.Store.uCommerce_Product" Multiplicity="1" />
+          <End Role="NiceUrl_Product" Type="Base.Store.NiceUrl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Product">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_ProductCategoryRelations_NiceUrl_Category">
+          <End Role="NiceUrl_Category" Type="Base.Store.NiceUrl_Category" Multiplicity="1" />
+          <End Role="NiceUrl_ProductCategoryRelations" Type="Base.Store.NiceUrl_ProductCategoryRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_ProductCategoryRelations">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_ProductCategoryRelations_NiceUrl_Product">
+          <End Role="NiceUrl_Product" Type="Base.Store.NiceUrl_Product" Multiplicity="1" />
+          <End Role="NiceUrl_ProductCategoryRelations" Type="Base.Store.NiceUrl_ProductCategoryRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_ProductCategoryRelations">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uCommerce_Category_ParentCategory">
+          <End Role="uCommerce_Category" Type="Base.Store.uCommerce_Category" Multiplicity="0..1" />
+          <End Role="uCommerce_Category1" Type="Base.Store.uCommerce_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="uCommerce_Category1">
+              <PropertyRef Name="ParentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uCommerce_Product_ParentProduct">
+          <End Role="uCommerce_Product" Type="Base.Store.uCommerce_Product" Multiplicity="0..1" />
+          <End Role="uCommerce_Product1" Type="Base.Store.uCommerce_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="uCommerce_Product1">
+              <PropertyRef Name="ParentProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="uCommerce_FK_Category_ProductCatalog">
+          <End Role="uCommerce_ProductCatalog" Type="Base.Store.uCommerce_ProductCatalog" Multiplicity="1" />
+          <End Role="uCommerce_Category" Type="Base.Store.uCommerce_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_ProductCatalog">
+              <PropertyRef Name="ProductCatalogId" />
+            </Principal>
+            <Dependent Role="uCommerce_Category">
+              <PropertyRef Name="ProductCatalogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Base" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BaseContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="NiceUrl_LanguageName" EntityType="Base.NiceUrl_LanguageName" />
+          <EntitySet Name="NiceUrl_Url" EntityType="Base.NiceUrl_Url" />
+          <EntitySet Name="uCommerce_Category" EntityType="Base.uCommerce_Category" />
+          <EntitySet Name="uCommerce_Product" EntityType="Base.uCommerce_Product" />
+          <EntitySet Name="uCommerce_ProductCatalog" EntityType="Base.uCommerce_ProductCatalog" />
+          <AssociationSet Name="FK_NiceUrl_Catalog_uCommerce_ProductCatalog" Association="Base.FK_NiceUrl_Catalog_uCommerce_ProductCatalog">
+            <End Role="uCommerce_ProductCatalog" EntitySet="uCommerce_ProductCatalog" />
+            <End Role="NiceUrl_Catalog" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_NiceUrl_Catalog" Association="Base.FK_NiceUrl_Category_NiceUrl_Catalog">
+            <End Role="NiceUrl_Catalog" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_NiceUrl_Category1" Association="Base.FK_NiceUrl_Category_NiceUrl_Category1">
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Category1" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Category_uCommerce_Category" Association="Base.FK_NiceUrl_Category_uCommerce_Category">
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_LanguageName_NiceUrl_Url" Association="Base.FK_NiceUrl_LanguageName_NiceUrl_Url">
+            <End Role="NiceUrl_Url" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_LanguageName" EntitySet="NiceUrl_LanguageName" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Product_NiceUrl_Product1" Association="Base.FK_NiceUrl_Product_NiceUrl_Product1">
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Product1" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NiceUrl_Product_uCommerce_Product" Association="Base.FK_NiceUrl_Product_uCommerce_Product">
+            <End Role="uCommerce_Product" EntitySet="uCommerce_Product" />
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uCommerce_Category_ParentCategory" Association="Base.FK_uCommerce_Category_ParentCategory">
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+            <End Role="uCommerce_Category1" EntitySet="uCommerce_Category" />
+          </AssociationSet>
+          <AssociationSet Name="uCommerce_FK_Category_ProductCatalog" Association="Base.uCommerce_FK_Category_ProductCatalog">
+            <End Role="uCommerce_ProductCatalog" EntitySet="uCommerce_ProductCatalog" />
+            <End Role="uCommerce_Category" EntitySet="uCommerce_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uCommerce_Product_ParentProduct" Association="Base.FK_uCommerce_Product_ParentProduct">
+            <End Role="uCommerce_Product" EntitySet="uCommerce_Product" />
+            <End Role="uCommerce_Product1" EntitySet="uCommerce_Product" />
+          </AssociationSet>
+          <AssociationSet Name="NiceUrl_ProductCategoryRelations" Association="Base.NiceUrl_ProductCategoryRelations">
+            <End Role="NiceUrl_Category" EntitySet="NiceUrl_Url" />
+            <End Role="NiceUrl_Product" EntitySet="NiceUrl_Url" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="NiceUrl_Catalog" BaseType="Base.NiceUrl_Url">
+          <Property Type="Int32" Name="uCommerceCatalogID" Nullable="false" />
+          <NavigationProperty Name="uCommerce_ProductCatalog" Relationship="Base.FK_NiceUrl_Catalog_uCommerce_ProductCatalog" FromRole="NiceUrl_Catalog" ToRole="uCommerce_ProductCatalog" />
+          <NavigationProperty Name="NiceUrl_Category" Relationship="Base.FK_NiceUrl_Category_NiceUrl_Catalog" FromRole="NiceUrl_Catalog" ToRole="NiceUrl_Category" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Category" BaseType="Base.NiceUrl_Url">
+          <Property Type="Int32" Name="uCommerceCategoryID" Nullable="false" />
+          <Property Type="Int32" Name="ParentCategoryID" />
+          <Property Type="Int32" Name="CatalogID" Nullable="false" />
+          <NavigationProperty Name="NiceUrl_Catalog" Relationship="Base.FK_NiceUrl_Category_NiceUrl_Catalog" FromRole="NiceUrl_Category" ToRole="NiceUrl_Catalog" />
+          <NavigationProperty Name="ChildCategories" Relationship="Base.FK_NiceUrl_Category_NiceUrl_Category1" FromRole="NiceUrl_Category" ToRole="NiceUrl_Category1" />
+          <NavigationProperty Name="ParentCategory" Relationship="Base.FK_NiceUrl_Category_NiceUrl_Category1" FromRole="NiceUrl_Category1" ToRole="NiceUrl_Category" />
+          <NavigationProperty Name="uCommerce_Category" Relationship="Base.FK_NiceUrl_Category_uCommerce_Category" FromRole="NiceUrl_Category" ToRole="uCommerce_Category" />
+          <NavigationProperty Name="NiceUrl_Products" Relationship="Base.NiceUrl_ProductCategoryRelations" FromRole="NiceUrl_Category" ToRole="NiceUrl_Product" />
+        </EntityType>
+        <EntityType Name="NiceUrl_LanguageName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="CultureCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NiceUrl" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UrlID" Nullable="false" />
+          <NavigationProperty Name="NiceUrl_Url" Relationship="Base.FK_NiceUrl_LanguageName_NiceUrl_Url" FromRole="NiceUrl_LanguageName" ToRole="NiceUrl_Url" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Product" BaseType="Base.NiceUrl_Url">
+          <Property Type="Int32" Name="uCommerceProductID" Nullable="false" />
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="Int32" Name="ProductFamilyID" />
+          <NavigationProperty Name="Variants" Relationship="Base.FK_NiceUrl_Product_NiceUrl_Product1" FromRole="NiceUrl_Product" ToRole="NiceUrl_Product1" />
+          <NavigationProperty Name="ParentProduct" Relationship="Base.FK_NiceUrl_Product_NiceUrl_Product1" FromRole="NiceUrl_Product1" ToRole="NiceUrl_Product" />
+          <NavigationProperty Name="uCommerce_Product" Relationship="Base.FK_NiceUrl_Product_uCommerce_Product" FromRole="NiceUrl_Product" ToRole="uCommerce_Product" />
+          <NavigationProperty Name="NiceUrl_Categories" Relationship="Base.NiceUrl_ProductCategoryRelations" FromRole="NiceUrl_Product" ToRole="NiceUrl_Category" />
+        </EntityType>
+        <EntityType Name="NiceUrl_Url">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="NiceUrl_LanguageName" Relationship="Base.FK_NiceUrl_LanguageName_NiceUrl_Url" FromRole="NiceUrl_Url" ToRole="NiceUrl_LanguageName" />
+        </EntityType>
+        <EntityType Name="uCommerce_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Type="Int32" Name="CategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageMediaId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="DisplayOnSite" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Int32" Name="ParentCategoryId" />
+          <Property Type="Int32" Name="ProductCatalogId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Deleted" Nullable="false" />
+          <Property Type="Int32" Name="SortOrder" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DefinitionId" Nullable="false" />
+          <NavigationProperty Name="NiceUrl_Category" Relationship="Base.FK_NiceUrl_Category_uCommerce_Category" FromRole="uCommerce_Category" ToRole="NiceUrl_Category" />
+          <NavigationProperty Name="uCommerce_Category1" Relationship="Base.FK_uCommerce_Category_ParentCategory" FromRole="uCommerce_Category" ToRole="uCommerce_Category1" />
+          <NavigationProperty Name="uCommerce_Category2" Relationship="Base.FK_uCommerce_Category_ParentCategory" FromRole="uCommerce_Category1" ToRole="uCommerce_Category" />
+          <NavigationProperty Name="uCommerce_ProductCatalog" Relationship="Base.uCommerce_FK_Category_ProductCatalog" FromRole="uCommerce_Category" ToRole="uCommerce_ProductCatalog" />
+        </EntityType>
+        <EntityType Name="uCommerce_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Type="Int32" Name="ProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ParentProductId" />
+          <Property Type="String" Name="Sku" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VariantSku" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="DisplayOnSite" Nullable="false" />
+          <Property Type="String" Name="ThumbnailImageMediaId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrimaryImageMediaId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Weight" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Int32" Name="ProductDefinitionId" Nullable="false" />
+          <Property Type="Boolean" Name="AllowOrdering" Nullable="false" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Rating" />
+          <NavigationProperty Name="NiceUrl_Product" Relationship="Base.FK_NiceUrl_Product_uCommerce_Product" FromRole="uCommerce_Product" ToRole="NiceUrl_Product" />
+          <NavigationProperty Name="uCommerce_Product1" Relationship="Base.FK_uCommerce_Product_ParentProduct" FromRole="uCommerce_Product" ToRole="uCommerce_Product1" />
+          <NavigationProperty Name="uCommerce_Product2" Relationship="Base.FK_uCommerce_Product_ParentProduct" FromRole="uCommerce_Product1" ToRole="uCommerce_Product" />
+        </EntityType>
+        <EntityType Name="uCommerce_ProductCatalog">
+          <Key>
+            <PropertyRef Name="ProductCatalogId" />
+          </Key>
+          <Property Type="Int32" Name="ProductCatalogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ProductCatalogGroupId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PriceGroupId" Nullable="false" />
+          <Property Type="Boolean" Name="ShowPricesIncludingVAT" Nullable="false" />
+          <Property Type="Boolean" Name="IsVirtual" Nullable="false" />
+          <Property Type="Boolean" Name="DisplayOnWebSite" Nullable="false" />
+          <Property Type="Boolean" Name="LimitedAccess" Nullable="false" />
+          <Property Type="Boolean" Name="Deleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ModifiedBy" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NiceUrl_Catalog" Relationship="Base.FK_NiceUrl_Catalog_uCommerce_ProductCatalog" FromRole="uCommerce_ProductCatalog" ToRole="NiceUrl_Catalog" />
+          <NavigationProperty Name="uCommerce_Category" Relationship="Base.uCommerce_FK_Category_ProductCatalog" FromRole="uCommerce_ProductCatalog" ToRole="uCommerce_Category" />
+        </EntityType>
+        <Association Name="FK_NiceUrl_Catalog_uCommerce_ProductCatalog">
+          <End Type="Base.uCommerce_ProductCatalog" Role="uCommerce_ProductCatalog" Multiplicity="1" />
+          <End Type="Base.NiceUrl_Catalog" Role="NiceUrl_Catalog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_ProductCatalog">
+              <PropertyRef Name="ProductCatalogId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Catalog">
+              <PropertyRef Name="uCommerceCatalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_NiceUrl_Catalog">
+          <End Type="Base.NiceUrl_Catalog" Role="NiceUrl_Catalog" Multiplicity="1" />
+          <End Type="Base.NiceUrl_Category" Role="NiceUrl_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Catalog">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category">
+              <PropertyRef Name="CatalogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_NiceUrl_Category1">
+          <End Type="Base.NiceUrl_Category" Role="NiceUrl_Category" Multiplicity="0..1" />
+          <End Type="Base.NiceUrl_Category" Role="NiceUrl_Category1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category1">
+              <PropertyRef Name="ParentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Category_uCommerce_Category">
+          <End Type="Base.uCommerce_Category" Role="uCommerce_Category" Multiplicity="1" />
+          <End Type="Base.NiceUrl_Category" Role="NiceUrl_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Category">
+              <PropertyRef Name="uCommerceCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_LanguageName_NiceUrl_Url">
+          <End Type="Base.NiceUrl_Url" Role="NiceUrl_Url" Multiplicity="1" />
+          <End Type="Base.NiceUrl_LanguageName" Role="NiceUrl_LanguageName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Url">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_LanguageName">
+              <PropertyRef Name="UrlID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Product_NiceUrl_Product1">
+          <End Type="Base.NiceUrl_Product" Role="NiceUrl_Product" Multiplicity="0..1" />
+          <End Type="Base.NiceUrl_Product" Role="NiceUrl_Product1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NiceUrl_Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NiceUrl_Product1">
+              <PropertyRef Name="ProductFamilyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NiceUrl_Product_uCommerce_Product">
+          <End Type="Base.uCommerce_Product" Role="uCommerce_Product" Multiplicity="1" />
+          <End Type="Base.NiceUrl_Product" Role="NiceUrl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="NiceUrl_Product">
+              <PropertyRef Name="uCommerceProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uCommerce_Category_ParentCategory">
+          <End Type="Base.uCommerce_Category" Role="uCommerce_Category" Multiplicity="0..1" />
+          <End Type="Base.uCommerce_Category" Role="uCommerce_Category1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="uCommerce_Category1">
+              <PropertyRef Name="ParentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="uCommerce_FK_Category_ProductCatalog">
+          <End Type="Base.uCommerce_ProductCatalog" Role="uCommerce_ProductCatalog" Multiplicity="1" />
+          <End Type="Base.uCommerce_Category" Role="uCommerce_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_ProductCatalog">
+              <PropertyRef Name="ProductCatalogId" />
+            </Principal>
+            <Dependent Role="uCommerce_Category">
+              <PropertyRef Name="ProductCatalogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uCommerce_Product_ParentProduct">
+          <End Type="Base.uCommerce_Product" Role="uCommerce_Product" Multiplicity="0..1" />
+          <End Type="Base.uCommerce_Product" Role="uCommerce_Product1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uCommerce_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="uCommerce_Product1">
+              <PropertyRef Name="ParentProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NiceUrl_ProductCategoryRelations">
+          <End Type="Base.NiceUrl_Category" Role="NiceUrl_Category" Multiplicity="*" />
+          <End Type="Base.NiceUrl_Product" Role="NiceUrl_Product" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <Alias Key="Model" Value="Base" />
+        <Alias Key="Target" Value="Base.Store" />
+        <EntityContainerMapping CdmEntityContainer="BaseContainer" StorageEntityContainer="BaseStoreContainer">
+          <EntitySetMapping Name="NiceUrl_LanguageName">
+            <EntityTypeMapping TypeName="Base.NiceUrl_LanguageName">
+              <MappingFragment StoreEntitySet="NiceUrl_LanguageName">
+                <ScalarProperty Name="UrlID" ColumnName="UrlID" />
+                <ScalarProperty Name="NiceUrl" ColumnName="NiceUrl" />
+                <ScalarProperty Name="CultureCode" ColumnName="CultureCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NiceUrl_Url">
+            <EntityTypeMapping TypeName="IsTypeOf(Base.NiceUrl_Url)">
+              <MappingFragment StoreEntitySet="NiceUrl_Url">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Base.NiceUrl_Catalog)">
+              <MappingFragment StoreEntitySet="NiceUrl_Catalog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="uCommerceCatalogID" ColumnName="CatalogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Base.NiceUrl_Category)">
+              <MappingFragment StoreEntitySet="NiceUrl_Category">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="uCommerceCategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+                <ScalarProperty Name="CatalogID" ColumnName="CatalogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Base.NiceUrl_Product)">
+              <MappingFragment StoreEntitySet="NiceUrl_Product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="uCommerceProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ProductFamilyID" ColumnName="ProductFamilyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uCommerce_Category">
+            <EntityTypeMapping TypeName="Base.uCommerce_Category">
+              <MappingFragment StoreEntitySet="uCommerce_Category">
+                <ScalarProperty Name="DefinitionId" ColumnName="DefinitionId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ProductCatalogId" ColumnName="ProductCatalogId" />
+                <ScalarProperty Name="ParentCategoryId" ColumnName="ParentCategoryId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DisplayOnSite" ColumnName="DisplayOnSite" />
+                <ScalarProperty Name="ImageMediaId" ColumnName="ImageMediaId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uCommerce_Product">
+            <EntityTypeMapping TypeName="Base.uCommerce_Product">
+              <MappingFragment StoreEntitySet="uCommerce_Product">
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="AllowOrdering" ColumnName="AllowOrdering" />
+                <ScalarProperty Name="ProductDefinitionId" ColumnName="ProductDefinitionId" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="PrimaryImageMediaId" ColumnName="PrimaryImageMediaId" />
+                <ScalarProperty Name="ThumbnailImageMediaId" ColumnName="ThumbnailImageMediaId" />
+                <ScalarProperty Name="DisplayOnSite" ColumnName="DisplayOnSite" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="VariantSku" ColumnName="VariantSku" />
+                <ScalarProperty Name="Sku" ColumnName="Sku" />
+                <ScalarProperty Name="ParentProductId" ColumnName="ParentProductId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uCommerce_ProductCatalog">
+            <EntityTypeMapping TypeName="Base.uCommerce_ProductCatalog">
+              <MappingFragment StoreEntitySet="uCommerce_ProductCatalog">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="LimitedAccess" ColumnName="LimitedAccess" />
+                <ScalarProperty Name="DisplayOnWebSite" ColumnName="DisplayOnWebSite" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="ShowPricesIncludingVAT" ColumnName="ShowPricesIncludingVAT" />
+                <ScalarProperty Name="PriceGroupId" ColumnName="PriceGroupId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductCatalogGroupId" ColumnName="ProductCatalogGroupId" />
+                <ScalarProperty Name="ProductCatalogId" ColumnName="ProductCatalogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="NiceUrl_ProductCategoryRelations" TypeName="Base.NiceUrl_ProductCategoryRelations" StoreEntitySet="NiceUrl_ProductCategoryRelations">
+            <EndProperty Name="NiceUrl_Product">
+              <ScalarProperty Name="ID" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="NiceUrl_Category">
+              <ScalarProperty Name="ID" ColumnName="CategoryId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Base" ZoomLevel="95" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="Base.NiceUrl_Catalog" Width="1.5" PointX="4.625" PointY="1.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Base.NiceUrl_Category" Width="2.125" PointX="4.625" PointY="7.125" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="Base.NiceUrl_LanguageName" Width="1.5" PointX="10.875" PointY="1.75" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Base.NiceUrl_Product" Width="2" PointX="8.125" PointY="7.125" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Base.NiceUrl_Url" Width="1.5" PointX="7.875" PointY="4.25" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="Base.uCommerce_Category" Width="2.125" PointX="1.375" PointY="6.25" Height="4.2879036458333317" />
+        <EntityTypeShape EntityType="Base.uCommerce_Product" Width="2" PointX="10.875" PointY="4.625" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="Base.uCommerce_ProductCatalog" Width="2.125" PointX="1.25" PointY="1.75" Height="3.9033007812499996" />
+        <AssociationConnector Association="Base.FK_NiceUrl_Catalog_uCommerce_ProductCatalog" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.375" PointY="2.547841796875" />
+          <ConnectorPoint PointX="4.625" PointY="2.547841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_Category_NiceUrl_Catalog">
+          <ConnectorPoint PointX="5.09375" PointY="3.3456835937499996" />
+          <ConnectorPoint PointX="5.09375" PointY="7.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_Category_NiceUrl_Category1">
+          <ConnectorPoint PointX="5.3785576923076928" PointY="9.6821907552083317" />
+          <ConnectorPoint PointX="5.3785576923076928" PointY="9.9321907552083317" />
+          <ConnectorPoint PointX="6.0111538461538458" PointY="9.9321907552083317" />
+          <ConnectorPoint PointX="6.0111538461538458" PointY="9.6821907552083317" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_Category_uCommerce_Category">
+          <ConnectorPoint PointX="3.5" PointY="8.4035953776041659" />
+          <ConnectorPoint PointX="4.625" PointY="8.4035953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_LanguageName_NiceUrl_Url">
+          <ConnectorPoint PointX="9.0312525" PointY="4.25" />
+          <ConnectorPoint PointX="9.0312525" PointY="2.735341796875" />
+          <ConnectorPoint PointX="10.875" PointY="2.735341796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_Product_NiceUrl_Product1">
+          <ConnectorPoint PointX="8.83423076923077" PointY="9.4898893229166674" />
+          <ConnectorPoint PointX="8.83423076923077" PointY="9.7398893229166674" />
+          <ConnectorPoint PointX="9.429615384615385" PointY="9.7398893229166674" />
+          <ConnectorPoint PointX="9.429615384615385" PointY="9.4898893229166674" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_NiceUrl_Product_uCommerce_Product">
+          <ConnectorPoint PointX="10.875" PointY="8.2112532552083337" />
+          <ConnectorPoint PointX="10.125" PointY="8.2112532552083337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_uCommerce_Category_ParentCategory">
+          <ConnectorPoint PointX="2.1285576923076923" PointY="10.537903645833332" />
+          <ConnectorPoint PointX="2.1285576923076923" PointY="10.787903645833332" />
+          <ConnectorPoint PointX="2.7611538461538458" PointY="10.787903645833332" />
+          <ConnectorPoint PointX="2.7611538461538458" PointY="10.537903645833332" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.uCommerce_FK_Category_ProductCatalog">
+          <ConnectorPoint PointX="2.375" PointY="5.65330078125" />
+          <ConnectorPoint PointX="2.375" PointY="6.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="Base.FK_uCommerce_Product_ParentProduct">
+          <ConnectorPoint PointX="11.58423076923077" PointY="9.2975065104166674" />
+          <ConnectorPoint PointX="11.58423076923077" PointY="9.5475065104166674" />
+          <ConnectorPoint PointX="12.179615384615385" PointY="9.5475065104166674" />
+          <ConnectorPoint PointX="12.179615384615385" PointY="9.2975065104166674" />
+        </AssociationConnector>
+        <InheritanceConnector EntityType="Base.NiceUrl_Catalog" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="4.25" />
+          <ConnectorPoint PointX="8.625" PointY="2.5403477907934082" />
+          <ConnectorPoint PointX="6.125" PointY="2.5403477907934082" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="Base.NiceUrl_Category" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="5.6533821614583335" />
+          <ConnectorPoint PointX="8.625" PointY="6.0283821614583335" />
+          <ConnectorPoint PointX="5.6875" PointY="6.0283821614583335" />
+          <ConnectorPoint PointX="5.6875" PointY="7.125" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="Base.NiceUrl_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="5.6533821614583335" />
+          <ConnectorPoint PointX="8.625" PointY="6.75" />
+          <ConnectorPoint PointX="9.125" PointY="6.75" />
+          <ConnectorPoint PointX="9.125" PointY="7.125" />
+        </InheritanceConnector>
+        <AssociationConnector Association="Base.NiceUrl_ProductCategoryRelations">
+          <ConnectorPoint PointX="6.75" PointY="8.3074446614583337" />
+          <ConnectorPoint PointX="8.125" PointY="8.3074446614583337" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
